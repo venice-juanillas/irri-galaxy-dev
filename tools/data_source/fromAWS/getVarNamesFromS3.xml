@@ -1,0 +1,38 @@
+<tool name="Get List of 3K Unique ID" id="3kvarnames" version="1.0.0">
+        <description>-All varieties From Amazon S3 Data Repository</description>
+        <command> 
+        	aws s3 ls s3://3kricegenome/Nipponbare --recursive | awk '/.snp.vcf.gz$/ {print $4}' | cut -d '/' -f 2 | cut -d '.' -f 1 | sort | uniq > $output
+	</command>
+	<inputs>
+		<param name="bucket" type="text" size="30" value="3kricegenome" label="Bucket Name"/>
+		
+        <!--    <param name="varietyName" type="text" size="30" label="UniqueID/VarietyName" help="Unique name of variety as specified in the S3 storage"/-->
+        <!--<param name="varietyName" type="select" multiple="false"  label="UniqueID/VarietyName" >
+                        <option from_file="/home/galaxy/galaxy-dev/tools/data_source/s3Access/allVarNames.txt" >
+                                <column name="uniqueName" index="0" />
+                        </option>
+                </param>
+                <param name="ref" type="select" label="Reference">
+                        <option value="Nipponbare">Nipponbare</option>
+                        <option value="9311">9311</option>
+                        <option value="DJ123">DJ123</option>
+                        <option value="IR64">IR64</option>
+                        <option value="Kasalath">Kasalath</option>
+                </param>
+                <param name="chr" type="text" size="30" label="Chromosome/Scaffold"/>
+                <param name="start" type="text" size="10" label="Start Position" />
+                <param name="end" type="text" size="10" label="End Position" help="Limit: base pair distance from start to end should only be 60,000 bp"/> -->
+        </inputs>
+        <outputs>
+                <data name="output" format="tabular" />
+        </outputs>
+
+       <!-- <help>
+                **Get Subset VCF**
+
+                This tool extracts a subset VCF using tabix
+
+        </help> -->
+
+</tool>
+

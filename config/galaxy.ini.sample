@@ -29,19 +29,19 @@
 use = egg:Paste#http
 
 # The port on which to listen.
-#port = 8080
+port = 8081
 
 # The address on which to listen.  By default, only listen to localhost (Galaxy
 # will not be accessible over the network).  Use '0.0.0.0' to listen on all
 # available network interfaces.
-#host = 127.0.0.1
+host = 0.0.0.0
 
 # Use a threadpool for the web server instead of creating a thread for each
 # request.
 use_threadpool = True
 
 # Number of threads in the web server thread pool.
-#threadpool_workers = 10
+threadpool_workers = 10
 
 # Set the number of seconds a thread can work before you should kill it
 # (assuming it will never finish) to 3 hours.  Default is 600 (10 minutes).
@@ -97,6 +97,7 @@ paste.app_factory = galaxy.web.buildapp:app_factory
 # instead.  This string takes many options which are explained in detail in the
 # config file documentation.
 #database_connection = sqlite:///./database/universe.sqlite?isolation_level=IMMEDIATE
+database_connection = postgresql:///galaxy?host=/var/run/postgresql
 
 # If the server logs errors about not having enough database pool connections,
 # you will want to increase these values, or consider running more Galaxy

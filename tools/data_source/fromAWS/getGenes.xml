@@ -1,0 +1,47 @@
+
+<tool id="getgenes" name="Get Gene List" version="1.0.0">
+  <description>on MSU7 from the specified position</description>
+  <command interpreter="perl">getGenes.pl $chr $start $end $genes</command>
+  <inputs>
+    <param name ="chr" type="select">
+                <label>Chromosome Location</label>
+                <option value="Chr1">Chr1 </option>
+                <option value="Chr2">Chr2 </option>
+                <option value="Chr3">Chr3 </option>
+                <option value="Chr4">Chr4 </option>
+                <option value="Chr5">Chr5 </option>
+                <option value="Chr6">Chr6 </option>
+                <option value="Chr7">Chr7 </option>
+                <option value="Chr8">Chr8 </option>
+                <option value="Chr9">Chr9 </option>
+                <option value="Chr10">Chr10 </option>
+                <option value="Chr11">Chr11 </option>
+                <option value="Chr12">Chr12 </option>
+    </param>
+    <param name="start" size="10" type="text" value="1">
+                <label>Start Position</label>
+    </param>
+    <param name="end" size="10" type="text" value="20000">
+                <label>End Position</label>
+    </param>
+  </inputs>
+  <outputs>
+    <!-- <data format="tabular" name="genes" label="Genes found from ${start.value} to ${end.value}"/> -->
+    <data format="html" name="genes" label="MSU 7.0 gene list from ${chr}: ${start.value} - ${end.value}"/>
+
+  </outputs>
+
+  <tests>
+    <test>
+      <!-- <param name="infile" value="ALC_test.tsv"></param>
+      <output name="log" file="Alchemy_log.txt"/> -->
+    </test>
+  </tests>
+
+  <help>
+This tool gets the list of all genes  within the specified region  on the rice genome (Nipponbare 1.0, MSU7 annotation).
+
+  </help>
+
+</tool>
+

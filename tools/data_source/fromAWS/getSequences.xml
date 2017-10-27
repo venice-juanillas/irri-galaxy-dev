@@ -1,0 +1,47 @@
+
+<tool id="getgeneseq" name="Get Gene Sequence" version="1.0.0">
+  <description>on Nipponbare MSU7 from the specified position</description>
+  <command interpreter="perl">getSequences.pl $chr $start $end $genes</command>
+  <inputs>
+    <param name ="chr" type="select">
+                <label>Chromosome Location</label>
+                <option value="Chr1">Chr1 </option>
+                <option value="Chr2">Chr2 </option>
+                <option value="Chr3">Chr3 </option>
+                <option value="Chr4">Chr4 </option>
+                <option value="Chr5">Chr5 </option>
+                <option value="Chr6">Chr6 </option>
+                <option value="Chr7">Chr7 </option>
+                <option value="Chr8">Chr8 </option>
+                <option value="Chr9">Chr9 </option>
+                <option value="Chr10">Chr10 </option>
+                <option value="Chr11">Chr11 </option>
+                <option value="Chr12">Chr12 </option>
+    </param>
+    <param name="start" size="10" type="text" value="0">
+                <label>Start Position</label>
+    </param>
+    <param name="end" size="10" type="text" value="0">
+                <label>End Position</label>
+    </param>
+  </inputs>
+  <outputs>
+    <!--<data format="tabular" name="out" label="Alchemy Calls of ${infile.name}"/>
+    <data format="tabular" name="log" label="Log File of ${infile.name}"/>-->
+    <data format="fasta" name="genes" label="Genes found from ${start.value} to ${end.value}"/>
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="infile" value="ALC_test.tsv"></param>
+      <output name="log" file="Alchemy_log.txt"/>
+    </test>
+  </tests>
+
+  <help>
+This tool gets all genes specified within specified positions on the rice genome (MSU7).
+
+  </help>
+
+</tool>
+

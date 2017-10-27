@@ -21,6 +21,7 @@ database/tmp
 database/*.sqlite
 database/openid_consumer_cache
 database/dependencies
+database/*
 
 # Python bytecode
 *.pyc
@@ -73,6 +74,9 @@ config/plugins/interactive_environments/**/*.ini
 !config/plugins
 static/welcome.html.*
 static/welcome.html
+
+# Tools
+
 
 # Tool data.
 tool-data/annotation_profiler_options.xml
