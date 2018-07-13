@@ -1,0 +1,6 @@
+#!/home/venice/Documents/irri-galaxy-dev/database/dependencies/_conda/bin/python
+if __name__ == '__main__':
+    import sys
+    import pip
+
+    sys.exit(pip.main())
