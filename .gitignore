@@ -142,3 +142,5 @@ doc/source/dev/schema.rst
 .idea/
 lib/*
 */*/*.ini
+*/*/*.sqlite
+
